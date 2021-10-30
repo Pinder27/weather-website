@@ -26,7 +26,7 @@ const forecast = (adress,callback)=>{
              callback('unable to connect to weather services!',undefined)
          }else if(body.error){
              callback('not able to find the location',undefined)
-         }else{callback(undefined,'currently there is '+body.current.temperature+' degree celcius out, but it feels like '+body.current.feelslike+' degree celcius')}
+         }else{callback(undefined,body.current.weather_descriptions + '\ncurrently there is '+body.current.temperature+' degree celcius out, but it feels like '+body.current.feelslike+' degree celcius' +'\nthe humidity is '+body.current.humidity+'%.')}
          
      })
         
